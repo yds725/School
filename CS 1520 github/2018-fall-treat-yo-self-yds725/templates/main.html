@@ -1,0 +1,51 @@
+{% extends "base.html"%}
+
+{% block title %}
+    <title>Treat Yo Self Salon</title>
+{% endblock %}
+{% block style %}
+    <link href = "{{url_for('static', filename='main.css')}}" rel = "stylesheet">
+{% endblock %}
+    
+{% block header %}
+<div id = "login_body" class ="modal">
+    <form id = "login_form" method = "POST">
+        <label>Username:</label>
+        <input type = "text" placeholder = "Username" name = "username">
+        <label>Password:</label>
+        <input type = "password" placeholder = "Password" name = "password">
+      <div class = "login_buttons">
+        <button type = "submit" value="submit">Log In</button>
+        <button type = "button" onclick="closeBox('login_body');">Cancel</button>
+      </div>
+    </form>
+</div>
+<hgroup>
+    {% if logged %}
+        <div>
+            <form class = "button_form" method = "GET">
+                <button id = "logout_button" type = "button" onclick = "window.location.href = {{url_for('logout')}};">Log Out</button>
+                <button id = "profile_button" type = "button" onclick = "window.location.href = {{url_for('redirect_profile')}};">Profile</button>
+            </form>
+        </div>
+    {% else %}
+        <div>
+            <form class = "button_form" method = "GET">
+                <button id = "signin_button" type = "button" onclick = "displayBox('login_body');">Sign In</button>
+                <button id = "register_button" type = "button" onclick = "window.location.href = {{url_for('new_patron')}};">Register New Patron</button>
+             </form>
+        </div>
+    {% endif %}
+    <header>
+        <h1>Salon Service</h1>
+    </header>
+</hgroup>
+
+{% endblock %}
+
+{% block body %}
+    {% for msg in  get_flashed_messages() %}
+        <div class = "flash">{{ msg }}</div>
+    {% endfor %}
+    <script type = "text/javascript" src = "{{url_for('static', filename='modal.js')}}" ></script>
+{% endblock body %}

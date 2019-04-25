@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Box Office Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+</head>
+
+<body>
+    <h1>Box Office Dashboard</h1>
+
+    <div class='dashboard-grid'>
+        <div id='top-ten-movies'>
+            <h2>Top 10 Highest Grossing Films</h2>
+            <h4>Avg: <span id="gross-average"></span></h4>
+            <ol id="gross-movies">
+            </ol>
+        </div>
+
+        <div id='top-ten-movies-by-studio'>
+            <h2>Top 10 by <span id="studio-name">Studio</span>
+                <select id='studio-select' onchange="updateStudio(this.value)">
+                </select>
+            </h2>
+            <h4>Avg: <span id="studio-average"></span></h4>
+            <ol id='studio-movies'>
+            </ol>
+        </div>
+
+        <div id='top-ten-movies-by-opening-weekend'>
+            <h2>Top 10 by Opening Weekend Gross</h2>
+            <h4>Avg: <span id="opening-average"></span></h4>
+            <ol id="opening-movies">
+            </ol>
+        </div>
+
+        <div id='movie-list-complete'></div>
+    </div>
+    <script>
+        var movies;
+
+        // Helper function to format numbers with commas and '$'.
+        function formatNumbers(number, currency) {
+            if (number) {
+                number = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                if (currency) {
+                    number = '$' + number;
+                }
+            }
+            return number
+        }
+
+        // Get the movies via AJAX from API collection once DOM Content is all loaded.
+        document.addEventListener('DOMContentLoaded', function() {
+            var request = new XMLHttpRequest();
+
+            request.onreadystatechange = function() {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                    if (request.status === 200) {
+                        movies = JSON.parse(request.responseText);
+                        // Use a custom event to trigger the population of when
+                        // they are loaded.
+                        window.dispatchEvent(new Event('moviesLoaded'));
+                    }
+                }
+            }
+
+            request.open('GET', "{{ url_for('movies') }}");
+            request.send();
+        });
+
+        // Load the table of all movies.
+        var movieListDiv = document.getElementById('movie-list-complete')
+
+        // Custom event handler fired once movies are all loaded via AJAX.
+        window.addEventListener('moviesLoaded', function(e) {
+            var movieTable = document.createElement('table');
+            var header = document.createElement('tr');
+
+            var titleHead = document.createElement('th');
+            titleHead.textContent = 'Title';
+
+            var studioHead = document.createElement('th');
+            studioHead.textContent = 'Studio';
+
+            var totalGrossHead = document.createElement('th');
+            totalGrossHead.textContent = 'Total Gross';
+
+            var totalTheatersHead = document.createElement('th');
+            totalTheatersHead.textContent = 'Total Theaters';
+
+            var openingGrossHead = document.createElement('th');
+            openingGrossHead.textContent = 'Opening Gross';
+
+            var openingTheatersHead = document.createElement('th');
+            openingTheatersHead.textContent = 'Opening Theaters';
+
+            header.append(titleHead);
+            header.append(studioHead);
+            header.append(totalGrossHead);
+            header.append(totalTheatersHead);
+            header.append(openingGrossHead);
+            header.append(openingTheatersHead);
+            movieTable.append(header);
+
+            movies.forEach(function(item, idx, arr) {
+                var mRow = document.createElement('tr');
+                var mTitle = document.createElement('td');
+                var mStudio = document.createElement('td');
+                var mTotalGross = document.createElement('td');
+                var mTotalTheaters = document.createElement('td');
+                var mOpeningGross = document.createElement('td');
+                var mOpeningTheaters = document.createElement('td');
+
+                mTitle.textContent = item.title;
+                mStudio.textContent = item.studio;
+                mTotalGross.textContent = formatNumbers(item.total_gross, true);
+                mTotalTheaters.textContent = formatNumbers(item.total_theaters, false);
+                mOpeningGross.textContent = formatNumbers(item.opening_gross, true);
+                mOpeningTheaters.textContent = formatNumbers(item.opening_theaters, false);
+
+                mRow.append(mTitle);
+                mRow.append(mStudio);
+                mRow.append(mTotalGross);
+                mRow.append(mTotalTheaters);
+                mRow.append(mOpeningGross);
+                mRow.append(mOpeningTheaters);
+
+                movieTable.append(mRow);
+            });
+
+            movieListDiv.append(movieTable);
+
+            highestGrossingFilms(movies);
+            highestOpeningWkndGrossFilms(movies);
+            highestGrossByStudio(movies);
+        });
+
+            
+        function highestGrossingFilms(movies){
+
+            //help from Our TA, this map only separates out movie title, total_gross
+            //so that we do not have to have big data we do not even need
+            var list = movies.map(function(movie) { 
+                return {title: movie.title, total_gross: movie.total_gross}
+                }); //function(movie) {return {title: x.title, total_gross: x.total_gross} }
+            var sum = 0;
+            var avg = 0;
+
+            list.sort(function(a,b){return b.total_gross - a.total_gross});
+            var ten_list = list.slice(0, 10); // maybe i can use filter to get only 10 elements
+            var order_list = document.getElementById("gross-movies");
+            var gross_avg = document.getElementById("gross-average");
+            //maybe i can use map to create two array 
+            ten_list.forEach(function(item, idx, arr) {
+                 
+                 var mList = document.createElement('li');
+                 mList.textContent = item.title + "  " + formatNumbers(item.total_gross, true);
+                 order_list.appendChild(mList);
+
+                //order_list.textContent = item.title + " " + item.total_gross;
+               
+            });
+
+            //sum = ten_list.reduce((movie,total) => parseInt(movie.total_gross) + total, 0);
+
+            //reduce to accumulate sum first and then calculate average
+            sum = ten_list.reduce(function(total, value){
+                return total + value.total_gross;
+            }, 0);
+            avg = sum / ten_list.length;
+
+            gross_avg.textContent = formatNumbers(avg, true);
+
+        }
+
+        function highestOpeningWkndGrossFilms(movies){
+
+            //help from our TA, this map only separates out movie title, opening_gross
+            //so that we do not have to have big data we do not even need
+            var list = movies.map(function(movie) { 
+                return {title: movie.title, opening_gross: movie.opening_gross}
+                }); //function(movie) {return {title: x.title, total_gross: x.total_gross} }
+            var sum = 0;
+            var avg = 0;
+
+            list.sort(function(a,b){return b.opening_gross - a.opening_gross});
+            var ten_list = list.slice(0,10);
+            var order_list = document.getElementById("opening-movies");
+            var opening_avg = document.getElementById("opening-average");
+
+            ten_list.forEach(function(item, idx, arr) {
+                var mList = document.createElement('li');
+                mList.textContent = item.title + "  " + formatNumbers(item.opening_gross, true);
+                order_list.appendChild(mList);
+            });
+
+            sum = ten_list.reduce((total, movie) => total + movie.opening_gross, 0);
+            avg = sum / ten_list.length;
+
+            opening_avg.textContent = formatNumbers(avg, true);
+
+
+        }
+
+        //function for populating select drop down list
+        function highestGrossByStudio(movies){
+            var selection = document.getElementById("studio-select");
+            var list = movies;
+
+            //this map just returns array of only studio names
+            var studio_list = list.map(movie => movie.studio);
+
+            //then sort studio list to alphabetically sort and use filter to remove duplicates
+            //this filter takes quadratic; Set is better
+            var no_duplicates = studio_list.sort().filter(function(studio, index, array){
+                return array.indexOf(studio) == index;
+            });
+
+            no_duplicates.forEach(function(item, idx, arr) {
+                var option = document.createElement("option");
+                option.value = item;
+                option.text = item;
+                selection.appendChild(option);
+            });
+
+        }
+
+        function updateStudio(name){
+            var studio_name_span = document.getElementById("studio-name");
+            studio_name_span.textContent = name;
+            //console.log(movies);
+            var order_list = document.getElementById("studio-movies");
+            var gross_avg = document.getElementById("studio-average");
+            order_list.innerHTML = '';
+            
+            var sum = 0;
+            var avg = 0;
+
+            //var list = movies;
+
+            //help from our TA, this map only separates out movie title, movie studio, total_gross
+            //so that we do not have to have big data we do not even need
+            var list = movies.map(function(movie) { 
+                return {title: movie.title, studio: movie.studio, total_gross: movie.total_gross}
+                }); //function(movie) {return {title: x.title, total_gross: x.total_gross} }
+            
+            //help from TA, this pass closure function into varaible
+            var passStudioFilter = closureStudioFilter(name);
+
+            //var studio_list = list.filter(movie => movie.studio === name);
+
+            //we just use that returned function into filter
+            var studio_list = list.filter(passStudioFilter);
+
+
+            studio_list = studio_list.sort(function(a,b){return b.total_gross - a.total_gross});
+
+            var ten_list = studio_list.slice(0, 10);
+            
+
+            ten_list.forEach(function(item, idx, arr) {
+                 
+                 var mList = document.createElement('li');
+                 mList.textContent = item.title + "  " + formatNumbers(item.total_gross, true);
+                 order_list.appendChild(mList);
+
+                //order_list.textContent = item.title + " " + item.total_gross;
+               
+            });
+
+            sum = ten_list.reduce(function(total, value){
+                return total + value.total_gross;
+            }, 0);
+            avg = sum / ten_list.length;
+            avg = avg.toFixed(2);
+
+            gross_avg.textContent = formatNumbers(avg, true);
+
+
+        }
+
+        //our closure function
+        function closureStudioFilter(name){
+            return function(m){
+                return m.studio === name;
+            }
+        }
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

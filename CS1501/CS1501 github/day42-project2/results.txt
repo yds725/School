@@ -1,0 +1,87 @@
+Files                   	      Original            Compressed           Ratio  (size KB)
+				   (same for all)
+-------------------------------------------------------------------------------------------------------
+all.tar 	LZW.java        	2960			1804		  	1.64
+		Bandizip(.7z)					810			3.65
+		MyLZW -n					1751			1.69
+		MyLZW -r					1151			2.57
+		MyLZW -m					1778			1.66
+
+assig2.doc 	LZW.java        	85			73			1.16
+	   	Bandizip(.7z)					21			4.04
+	   	MyLZW -n					40			2.12
+	   	MyLZW -r					40			2.12
+	   	MyLZW -m					40			2.12
+
+bmps.tar	LZW.java        	1080			904			1.19
+	   	Bandizip(.7z)					53			20.3
+	   	MyLZW -n					80			13.5
+	   	MyLZW -r					80			13.5
+	   	MyLZW -m					80			13.5
+
+code.txt 	LZW.java        	71			31			2.29
+	   	Bandizip(.7z)					14			5.07
+	   	MyLZW -n					24			2.95
+	   	MyLZW -r					24			2.95
+	   	MyLZW -m					24			2.95
+
+code2.txt 	LZW.java  		57      		24			2.37
+	   	Bandizip(.7z)					13			4.38
+	   	MyLZW -n 					21			2.71
+	   	MyLZW -r					21			2.71
+	   	MyLZW -m					21			2.71
+
+edit.exe 	LZW.java        	231			245			0.94
+	   	Bandizip(.7z)					96			2.40
+	   	MyLZW -n					153			1.50
+	   	MyLZW -r					149			1.55
+	   	MyLZW -m					153			1.50
+
+frosty.jpg 	LZW.java        	124			174			0.71
+	   	Bandizip(.7z)					124			1.0
+	   	MyLZW -n					160			0.77
+	   	MyLZW -r					168			0.73			
+		MyLZW -m					160			0.77
+
+gone_fishing.bmp LZW.java        	17			10			1.7
+	   	 Bandizip(.7z)					8			2.125
+	   	 MyLZW -n					9			1.88
+	   	 MyLZW -r					9			1.88
+	   	 MyLZW -m					9			1.88
+
+large.txt 	LZW.java        	1193			591			2.01
+	   	Bandizip(.7z)					393			3.03
+		MyLZW -n					491			2.42
+	   	MyLZW -r					516			2.31
+	   	MyLZW -m					491			2.42
+
+Lego-big.gif	LZW.java        	92			126			0.73
+	   	Bandizip(.7z)					91			1.01
+	   	MyLZW -n					120			0.76
+	   	MyLZW -r					120			0.76
+	   	MyLZW -m					120			0.76
+
+medium.txt 	LZW.java        	25			13			1.92
+	   	Bandizip(.7z)					11			2.27
+	   	MyLZW -n					13			1.92
+	   	MyLZW -r					13			1.92	
+	   	MyLZW -m					13			1.92
+
+texts.tar 	LZW.java        	1350			989			1.36
+	   	Bandizip(.7z)					427			3.16
+	   	MyLZW -n					584			2.31
+	   	MyLZW -r					577			2.33		
+	   	MyLZW -m					584			2.31
+
+wacky.bmp	LZW.java        	901			5			180.2
+	   	Bandizip(.7z)					3			300.3
+	   	MyLZW -n					4			225.2
+	   	MyLZW -r					4			225.2
+	   	MyLZW -m					4			225.2
+
+winnt256.bmp 	LZW.java        	154			156			0.98
+	   	Bandizip(.7z)					43			3.58
+	   	MyLZW -n					62			2.48
+	   	MyLZW -r					62			2.48
+	   	MyLZW -m					62			2.48
+	   

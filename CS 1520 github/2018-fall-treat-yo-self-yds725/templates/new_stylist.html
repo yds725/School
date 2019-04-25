@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+
+{% block form %}
+<div >
+	<div>
+	<form class="register_form" action="" method="POST">
+		<h3>Register New Stylist</h3>
+		<div>
+            <div >
+				<input type="text" name="firstname" placeholder="First Name" size="40" required/>
+			</div>
+			<div >
+				<input type="text" name="lastname" placeholder="Last Name" size="40" required/>
+			</div>
+			<div>
+				<input type="text" name="username" placeholder="Username" size="50" required/>
+			</div>
+			<div>
+				<input type="password" name="password" placeholder="Password" size="50" required/>
+			</div>
+			<div>
+				<input type="password" name="password2" placeholder="Check Password" size="50" required/>
+			</div>
+			<button class="singup_button" type="submit" value="signup">Create Account</button>
+		</div>
+	</form>
+</div>
+</div>
+
+{% endblock %}

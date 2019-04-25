@@ -1,0 +1,36 @@
+<html>
+	<body>
+		<table name="table">
+			<tr>
+				<% count = size - 1 %>
+				<% while count >= 0  %>
+					<th>
+						<p><%= count %></p>
+					</th>
+					<% count -= 1 %>
+				<% end %>
+				<td><strong>AND</strong></td>
+				<td><strong>OR</strong></td>
+				<td><strong>XOR</strong></td>
+		    </tr> 
+			<% for i in 0 ... 2**size do %>
+				<tr>
+					<% array = convertIntegerToBinaryBit(i,size, true_input, false_input) %>
+					<% for a in array %>
+						<td><p><%= a %></p></td>
+					<% end %>
+					<td>
+						<p><%= logicalAND(array, true_input, false_input) %></p>
+					</td>
+					<td>
+						<p><%= logicalOR(array, true_input, false_input) %></p>
+					</td>
+					<td>
+						<p><%= logicalXOR(array, true_input, false_input) %></p>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+		<a href="/" name='homepage'>Back to main</a>
+	</body>
+</html>

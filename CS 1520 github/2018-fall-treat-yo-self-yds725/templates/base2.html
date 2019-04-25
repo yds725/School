@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Register New Account</title>
+{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block header %}
+	<hgroup>
+	    <header>
+	        <div>
+				<div><a id="back_main" href="{{ url_for('default') }}">Back Mainpage</a></div>
+	            <div><h1>Treat Yo Self Salon</h1></div>
+				{% if logged %}
+				<div>
+					<form class="button_form" method="GET">
+						<button type="button" id="logout_button"  onclick="window.location.href={{url_for('logout')}};">Log Out</button>
+						<button type="button" id="profile_button" onclick="window.location.href={{url_for('profile')}};">Profile</button>
+					</form>
+				</div>
+				{% endif %}
+	        </div>
+	    </header>
+	</hgroup>
+{% endblock %}
+
+{% block body %}
+	{% block form %}
+	{% endblock %}
+
+	{% for msg in get_flashed_messages() %}
+	    <div class="flash">{{ msg }}</div>
+	{% endfor %}
+{% endblock %}

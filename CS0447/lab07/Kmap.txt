@@ -1,0 +1,8 @@
+A: ~b2b1+b1~b0+b2~b1+b3
+B: ~b1~b0+~b1b2+~b0b2+b3
+C: ~b0~b2+b0b2+b3+b1~b2
+D: ~b1~b2+~b3~b2+~b1~b0~b3+b1b0~b3
+E: ~b0~b2+b1b3+b1~b0+b3b2
+F: ~b0~b2+b2b1b0+b1~b2+b1~b0+b3
+G: ~b1~b2+~b3b2+~b3~b2b0
+H: b1b3+b2b3

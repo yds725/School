@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Requirement8</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test-Handle-Invalid-Page-Error</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/Panther<datalist><option>http://localhost:4567/Panther</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Here is some info:'])[1]/following::p[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Here is some info:'])[1]/following::p[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR!'])[1]/following::p[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::p[1]</option><option>//p</option><option>css=p</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//h1<datalist><option>//h1</option></datalist></td><td>ERROR!</td>
+</tr>
+<tr><td>assertTextPresent</td><td>This page does not exist. Invalid Address!<datalist><option>This page does not exist. Invalid Address!</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

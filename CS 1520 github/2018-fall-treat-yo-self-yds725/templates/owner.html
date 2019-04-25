@@ -1,0 +1,48 @@
+{% extends 'profile.html' %}
+
+{% block body %}
+<div >
+	<form action="" method="GET">
+		<button type="button" class="header-button"  onclick="window.location.href={{url_for('new_stylist')}};">Register New Stylist</button>
+	</form>
+</div>
+
+<div class="stylist_container" style = "float: left;">
+		<h2 class="current_stylist">Current Stylists</h2>
+		{% for s in stylists %}
+			<div class="stylist_list">
+                <li>
+                    <strong>Stylist Name: {{ s.lastname }}, {{ s.firstname }}</strong><br />
+                    <form id = "pick_stylist" action = "" method = "GET">
+                    <button type = "button" id = "schedule_button"  onclick = "window.location.href='{{url_for('schedule_appointment', ID = s.id)}}';">Stylist Profile</button>
+                    </form>
+                </li>
+			</div>
+        {% else %}
+            <div>
+                <p class="stylist_list">No Stylists are registered</p>
+            </div>
+        {% endfor %}
+</div>
+
+<div class="patron_container" style = "float: right;">
+		<h2 class="current_patron">Current Patron</h2>
+		{% for p in patrons %}
+			<div class="patron_list">
+                <li>
+                    <strong>Patron username: {{ p.username }}</strong><br />
+                    <form id = "pick_stylist" action = "" method = "GET">
+                    <button type = "button" id = "schedule_button"  onclick = "window.location.href='{{url_for('patron_appointment', USER = p.username)}}';">Patron Profile</button>
+                    </form>
+                </li>
+			</div>
+        {% else %}
+            <div>
+                <p class="patron_list">No Patrons are registered</p>
+            </div>
+        {% endfor %}
+</div>
+
+
+{% endblock  %}
+

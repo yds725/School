@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Game Board {{ super() }}{% endblock %}
+
+{% block header %}
+
+{% if loggedIn %}
+      <a href = "{{ url_for('logout') }}">Sign Out</a>
+{% else %}
+      <a href="{{ url_for('home') }}">Home</a> |
+      <a href="{{ url_for('register') }}">Sing Up</a> |
+      <a href="{{ url_for('login') }}">Sign In</a> 
+{% endif %}
+
+{% endblock  %}
+
+{% block content %}
+
+{% if loggedIn %}
+
+<h1>Games</h1>
+
+<div class = "centered">
+<h3>User's Top scores</h3>
+<ul>
+    {% for s in scores %}
+     <li><a href = "{{ url_for('game', game_id = s.id)}}">{{ s.turn }}</a></li> 
+    {% endfor %}
+</ul>
+</div>
+
+<div style = "float: right;">
+<h3>Community Top Scores</h3>
+<ul>
+    {% for s in whole_scores %}
+     <li><a href = "{{ url_for('game', game_id = s.id)}}">{{ s.turn }} {{s.winner.username}}</a></li> 
+    {% endfor %}
+</ul>
+</div>
+
+{% if games %}
+<ul>
+    {% for game in games %}
+    {% if game.creator_id == userID %}
+    <li><a href="{{ url_for('game', game_id = game.id)}}">{{ game.game_title() }}</a></li>
+	<form action="{{ url_for('delete') }}" method="POST">
+        <div>
+		<input type="hidden" name="game_id" value="{{ game.id }}">
+        <input type="submit" value="delete">
+        </div>
+		</form>
+    {% else %}
+    <li><a href="{{ url_for('game', game_id = game.id)}}">{{ game.game_title() }}</a></li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<p>Currently, there are no games available to play.</p>
+{% endif %}
+
+<div>
+    <form action = "" method = "POST">
+        <div>
+            <table id = "game_list">
+            </table>
+        </div>
+    </form>
+</div>
+
+<div>
+    <form name = "Form">
+        <div>
+            <input id = "player2_username" type="text" name = "new_player2_username" placeholder="Player2 username" size = "50" />
+            <button id = "create_game_button" name = "create_game_button" type = "button" value = "{{ username }}">Create New Game</button>
+        </div>
+    </form>
+</div>
+
+{% else %}
+    No User is logged in yet.
+
+<div class = "centered">
+<ul>
+    <h3>Community Top Scores</h3>
+    {% for s in whole_scores %}
+     <li><a>{{ s.turn }}</a></li> 
+    {% endfor %}
+</ul>
+</div>
+
+{% endif %}
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='landing.js') }}"></script>
+{% endblock %}
+

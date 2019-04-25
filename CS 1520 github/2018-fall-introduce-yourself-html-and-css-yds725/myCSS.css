@@ -1,0 +1,13 @@
+h1.introduction {
+	font-size: 45px;
+	color: red;
+}
+
+.style {
+	color: green;
+	font-weight: bold;
+}
+
+#head {
+	text-align: center;
+}

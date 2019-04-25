@@ -1,0 +1,31 @@
+{% extends 'profile.html' %}
+
+{% block body %}
+<div style = "float: right;">
+	<form class = "button_form" method = "GET">
+    	<button id = "profile_button" type = "button" onclick = "window.location.href ='{{url_for('patron_appointment', USER = patron.username)}}';">Patron Profile</button>
+	</form>
+</div>
+
+<div>
+    <div class="stylist_container">
+		<h2 class="current_stylist">Current Stylists</h2>
+		{% for s in stylists %}
+			<div class="stylist_list">
+                <li>
+                    Stylist Name: <strong>{{ s.lastname }}, {{ s.firstname }}</strong><br />
+                    Service: haircut <br />
+                    <form id = "pick_stylist" action = "" method = "GET">
+                    <button type = "button" id = "schedule_button"  onclick = "window.location.href='{{url_for('schedule_appointment', ID = s.id)}}';">Schedule Appointment</button>
+                    </form>
+                </li>
+			</div>
+        {% else %}
+            <div>
+                <p class="stylist_list">No Stylists are registered</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

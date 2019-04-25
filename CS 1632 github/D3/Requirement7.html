@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Requirement7</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test-No-Input-To-Default-Values</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload Page'])[1]/preceding::input[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload Page'])[1]/preceding::input[1]</option><option>//input[@value='Show Truth Table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertTable</td><td>//table[@name='table'].1.0<datalist><option>//table[@name='table'].1.0</option></datalist></td><td>F</td>
+</tr>
+<tr><td>assertTable</td><td>//table[@name='table'].1.1<datalist><option>//table[@name='table'].1.1</option></datalist></td><td>F</td>
+</tr>
+<tr><td>assertTable</td><td>//table[@name='table'].1.2<datalist><option>//table[@name='table'].1.2</option></datalist></td><td>F</td>
+</tr>
+<tr><td>assertTable</td><td>//table[@name='table'].1.4<datalist><option>//table[@name='table'].1.4</option></datalist></td><td>F</td>
+</tr>
+<tr><td>assertTable</td><td>//table[@name='table'].8.4<datalist><option>//table[@name='table'].8.4</option></datalist></td><td>T</td>
+</tr>
+</tbody></table>
+</body>
+</html>

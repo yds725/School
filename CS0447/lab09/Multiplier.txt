@@ -1,0 +1,6 @@
+4 bits adder is 8bit 
+shifter is 8 bit 
+1 constant is 3 bit
+other 0 constant is 8 bit 00 
+
+For main

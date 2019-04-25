@@ -1,0 +1,958 @@
+{% extends 'profile.html' %}
+
+{% block body %}
+    <div>
+        <h2 align = "center">Appointment Schedule</h2>
+    </div>
+        <h3 align = "center"> Stylist <em> {{ stylist.firstname }} {{stylist.lastname}} </em>'s Schedule </h3>
+    <div>
+            <table id = "schedule_table">
+                <tr>
+                    <td align="center">
+                    <td>{{ col_dates[0] }}</td>
+                    <td>{{ col_dates[1] }}</td>
+                    <td>{{ col_dates[2] }}</td>
+                    <td>{{ col_dates[3] }}</td>
+                    <td>{{ col_dates[4] }}</td>
+                    <td>{{ col_dates[5] }}</td>
+                    <td>{{ col_dates[6] }}</td>
+                    <td>{{ col_dates[7] }}</td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list1[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="10AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list1[0] }}> {{ list1[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list1[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="10AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list1[1] }}> {{ list1[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list1[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="10AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list1[2] }}> {{ list1[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list1[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="10AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list1[3] }}> {{ list1[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list1[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="10AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list1[4] }}> {{ list1[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list1[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="10AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list1[5] }}> {{ list1[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list1[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="10AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list1[6] }}> {{ list1[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list1[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="10AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list1[7] }}> {{ list1[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>11:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list2[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="11AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list2[0] }}> {{ list2[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list2[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="11AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list2[1] }}> {{ list2[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list2[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="11AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list2[2] }}> {{ list2[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list2[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="11AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list2[3] }}> {{ list2[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list2[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="11AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list2[4] }}> {{ list2[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list2[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="11AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list2[5] }}> {{ list2[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list2[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="11AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list2[6] }}> {{ list2[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list2[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="11AM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list2[7] }}> {{ list2[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list3[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="12PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list3[0] }}> {{ list3[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list3[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="12PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list3[1] }}> {{ list3[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list3[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="12PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list3[2] }}> {{ list3[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list3[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="12PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list3[3] }}> {{ list3[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list3[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="12PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list3[4] }}> {{ list3[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list3[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="12PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list3[5] }}> {{ list3[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list3[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="12PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list3[6] }}> {{ list3[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list3[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="12PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list3[7] }}> {{ list3[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>13:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list4[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="1PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list4[0] }}> {{ list4[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list4[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="1PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list4[1] }}> {{ list4[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list4[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="1PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list4[2] }}> {{ list4[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list4[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="1PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list4[3] }}> {{ list4[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list4[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="1PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list4[4] }}> {{ list4[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list4[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="1PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list4[5] }}> {{ list4[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list4[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="1PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list4[6] }}> {{ list4[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list4[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="1PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list4[7] }}> {{ list4[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>14:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list5[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="2PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list5[0] }}> {{ list5[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list5[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="2PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list5[1] }}> {{ list5[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list5[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="2PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list5[2] }}> {{ list5[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list5[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="2PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list5[3] }}> {{ list5[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list5[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="2PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list5[4] }}> {{ list5[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list5[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="2PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list5[5] }}> {{ list5[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list5[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="2PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list5[6] }}> {{ list5[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list5[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="2PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list5[7] }}> {{ list5[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>15:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list6[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="3PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list6[0] }}> {{ list6[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list6[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="3PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list6[1] }}> {{ list6[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list6[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="3PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list6[2] }}> {{ list6[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list6[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="3PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list6[3] }}> {{ list6[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list6[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="3PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list6[4] }}> {{ list6[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list6[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="3PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list6[5] }}> {{ list6[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list6[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="3PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list6[6] }}> {{ list6[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list6[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="3PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list6[7] }}> {{ list6[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>16:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list7[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="4PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list7[0] }}> {{ list7[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list7[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="4PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list7[1] }}> {{ list7[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list7[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="4PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list7[2] }}> {{ list7[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list7[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="4PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list7[3] }}> {{ list7[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list7[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="4PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list7[4] }}> {{ list7[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list7[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="4PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list7[5] }}> {{ list7[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list7[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="4PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list7[6] }}> {{ list7[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list7[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="4PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list7[7] }}> {{ list7[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>17:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list8[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="5PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list8[0] }}> {{ list8[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list8[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="5PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list8[1] }}> {{ list8[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list8[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="5PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list8[2] }}> {{ list8[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list8[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="5PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list8[3] }}> {{ list8[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list8[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="5PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list8[4] }}> {{ list8[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list8[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="5PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list8[5] }}> {{ list8[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list8[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="5PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list8[6] }}> {{ list8[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list8[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="5PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list8[7] }}> {{ list8[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>18:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list9[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="6PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list9[0] }}> {{ list9[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list9[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="6PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list9[1] }}> {{ list9[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list9[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="6PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list9[2] }}> {{ list9[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list9[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="6PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list9[3] }}> {{ list9[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list9[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="6PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list9[4] }}> {{ list9[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list9[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="6PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list9[5] }}> {{ list9[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list9[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="6PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list9[6] }}> {{ list9[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                        {{ list9[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                        <input type="text" name="appointTime" value="6PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list9[7] }}> {{ list9[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td>19:00</td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                            {{ list10[0] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[0] }}" hidden/>
+                        <input type="text" name="appointTime" value="7PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list10[0] }}> {{ list10[0] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                            {{ list10[1] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[1] }}" hidden/>
+                        <input type="text" name="appointTime" value="7PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list10[1] }}> {{ list10[1] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                            {{ list10[2] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[2] }}" hidden/>
+                        <input type="text" name="appointTime" value="7PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list10[2] }}> {{ list10[2] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                            {{ list10[3] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[3] }}" hidden/>
+                        <input type="text" name="appointTime" value="7PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list10[3] }}> {{ list10[3] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                            {{ list10[4] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[4] }}" hidden/>
+                        <input type="text" name="appointTime" value="7PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list10[4] }}> {{ list10[4] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                            {{ list10[5] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[5] }}" hidden/>
+                        <input type="text" name="appointTime" value="7PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list10[5] }}> {{ list10[5] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                            {{ list10[6] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                        <input type="date" name="appointDate" value="{{ row_dates[6] }}" hidden/>
+                        <input type="text" name="appointTime" value="7PM" hidden/>
+                        <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list10[6] }}> {{ list10[6] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if stylist_loggedIn %}
+                            {{ list10[7] }}
+                        {% else %}
+                        <form id = "appointment_form" action="" method = "POST">
+                            <input type="date" name="appointDate" value="{{ row_dates[7] }}" hidden/>
+                            <input type="text" name="appointTime" value="7PM" hidden/>
+                            <button id="schedule_button" name = "appoint_button" type="submit" value= {{ list10[7] }}> {{ list10[7] }} </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+    </div>
+    
+    {% if stylist_loggedIn  %}
+    <div class="appoinments_container" style = "float: right;">
+	    <h3 class="patron_schedule">Scheduled Appointments</h3>
+		{% if appointments %}
+	    {% for a in appointments %}
+		    <div class="patron_schedule">
+			    <h4 class="patron_name">{{ a.patron.username }}</h4>
+			        <label class="patron_schedule">Date: </label>
+			        <p class="patron_schedule">{{ a.date.strftime('%b %d, %Y')}}</p>
+                     <label class="patron_schedule">Time: </label>
+                    <p class="patron_schedule">{{ a.time }}</p>
+	        </div>
+		{% endfor %}
+	    {% else %}
+		<div class="patron_schedule">
+			<p class="patron_schedule">No Appoiment scheduled</p>
+		</div>
+		{% endif %}
+	    
+    </div>
+    {% endif %}
+
+{% endblock body %}
+    

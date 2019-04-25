@@ -1,0 +1,48 @@
+
+<!-- saved from url=(0140)https://courseweb.pitt.edu/bbcswebdav/pid-25456985-dt-content-rid-42095107_2/courses/2191_UPITT_CS_1501_SEC1300/project-description-lcs.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+
+<hr><center><h3>Longest Common Subsequence</h3></center>
+
+A <em>Longest Common Subsequence</em> (LCS) of two strings is exactly
+what the name implies!  For instance, an LCS of the strings
+<tt>haedlelfog</tt> and <tt>abchxeylzloabc</tt> is the string
+<tt>hello</tt>.  Note that the characters of the LCS do not need to be
+contiguous in either of the original strings.  Also, there may be
+multiple LCS's.
+
+<p>
+
+It is simple to find an LCS of two strings recursively.  Suppose
+that <tt>s1</tt> and <tt>s2</tt> are strings, and <tt>c1</tt> and
+<tt>c1</tt> are characters.  Define <tt>LCS(s1+c1,s2+c2)</tt> to be:
+</p><ul>
+  <li> <tt>LCS(s1,s2)+c1</tt> if <tt>c1==c2</tt>
+  </li><li> <tt>LCS(s1+c1,s2)</tt> if <tt>c1!=c2</tt> and <tt>LCS(s1+c1,s2)&gt;LCS(s1,s2+c2)</tt>
+  </li><li> <tt>LCS(s1,s2+c2)</tt> if <tt>c1!=c2</tt> and <tt>LCS(s1,s2+c2)&gt;LCS(s1+c1,s2)</tt>
+</li></ul>
+Of course, <tt>LCS(s1,empty)=LCS(empty,s2)=empty</tt>.
+
+<p>
+
+A straightforward recursive implementation of this definition would be
+unusable, but a dynamic programming implementation should run in
+quadratic time.  This is because for input strings <tt>s1</tt> and
+<tt>s2</tt>, we need to complete a table with
+<tt>length(s1)*length(s2)</tt> entries, where each entry requires us
+to examine three previously computed entries and some simple
+arithmetic.
+
+You will write a class <tt>LCS</tt> in the file <tt>LCS.java</tt> with
+the static method:
+</p><pre>    public static String findLCS(String s1, String s2)
+</pre>
+that will find a longest common subsequence of two strings.  It should
+run in less than ten seconds for strings up to length 100.  Your code
+must work with my test file.  Also include a <tt>README.txt</tt> file.
+
+<p>
+</p><hr>
+
+
+</body></html>

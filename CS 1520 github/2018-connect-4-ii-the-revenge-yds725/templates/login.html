@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Login {{ super() }}{% endblock %}
+
+{% block content %}
+<h2>Sign In</h2>
+<div>
+    <form action = "" method = "POST">
+        <div>
+            <input id = "username_input" type="text" placeholder = "Username" name="username"/>
+        </div>
+        <div>
+            <input id = "password_input" type="password" placeholder = "Password" name="password"/>
+        </div>
+        <div class = "login_button">
+            <button id="submit_button" name="login_button" type="submit" value="submit">Sign In</button>
+        </div>
+    </form>
+</div>
+
+{% endblock  %}

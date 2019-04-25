@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %} - Connect 4{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"</link>
+    {% block extra_css %}
+    {% endblock %}
+  </head>
+  <body>
+  
+  <header>
+  {% block header %}
+  {% endblock  %}
+  </header>
+
+  <div class="content">
+        {% block content %}
+
+        {% endblock %}
+  </div>
+
+  {% for msg in get_flashed_messages() %}
+    <div>{{ msg }}</div>
+  {% endfor %}
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    {% block extra_js %}
+    {% endblock %}
+  </body>
+
+</html>

@@ -1,0 +1,58 @@
+========================================
+CS/COE 1501 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment.  Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name:  Daesang Yoon
+
+Lecture section:  CS 1501 W 6PM Writing section
+
+Recitation day and time:  F 2PM
+
+Assignment #: 2
+
+Program due date:  10/12
+
+Handed in date:  10/12
+
+Source code file name(s):
+MyLZW.java
+LZW.java
+Queue.java
+StdIn.java
+BinaryStdIn.java
+BinaryStdOut.java
+TST.java
+
+
+
+Other file name(s) (if relevant):
+results.txt
+
+
+
+Does your program run without error?: 
+Yes; but it takes some time to compress since I did not remove substring() call
+
+If not, what is/are the error(s) and which parts of your program run
+correctly?:
+
+
+
+
+
+
+
+Additional comments to the grader:
+How do I improve this slow performance? I am not sure how to remove all calls to substring(). 
+
+
+
+
+
+
+
+

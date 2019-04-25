@@ -1,0 +1,22 @@
+I have all class and methods in just one file.
+I make use of arraylist for Priority queue functions (adding apartment, retreiving apratment by lowest price, etc)
+Also, I make use of hash map for symbol table (string key as address+apartment number+zipcode, value as integer index of that Apartment elment in arraylist); this is like idea of indirection.
+I did not use linked list or higher level data structure but just simple array which everyone can easily understand.
+
+For function addNewApt(), I ask for all information (address, number, zipcode, city, price, footage) 
+and use stringbuilder to append address, number, zipcode to make ID variable for string key in hashmap (symbol table)
+After process above, I simply add AptData element to arraylist; this will take constant time O(1) since simply inserting into array.
+Then, I sort array like heap sort does, trying to make lowest or highest value goes to index 1 of array (array[1]) (I set my root as index 1 not 0); Runtime will take similar to heap sort so worst case will be O(n logn)
+
+For function updateApt, I ask for address, number, zipcode and append them together to make string ID variable which will match to string key in hashmap and return integer index. (So user must input exact same address, number, zipcode)
+Just updating price is easy and simple but we need to sort array again to make sure lowest price is at right position. So need to use heap sort again which will take O(n logn) time.
+Also we need to update our hash map or symbol table.
+
+For function remove, I also ask for address, number, zipcode and append them together to make string ID variable which will match to string key in hashmap and return integer index.
+To remove one element from data structure, we simply delete last index in array or leaf node of heap then overwrite AptData in that removed index to actual apartment that user wants to remove.
+However, we also have to sort the array again so that new lowest price or highest footage can be placed into right position so we use heap sort (O(n logn) again.
+
+For function retrieve by lowest price or highest footage, or by city, it is very simple because it always take constant time O(1).
+We simply return AptData at index 1 in arraylist and that will print out AptData that user wants to know.
+
+One thing to be very cautious about is that we need to carefully update Hashmap or symbol table everytime something changes so that indirection properly works out.
