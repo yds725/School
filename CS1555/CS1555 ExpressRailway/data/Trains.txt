@@ -1,0 +1,50 @@
+10;T10;Passenger with Dining;75;320;43
+11;T11;Passenger;100;120;12
+19;T19;Passenger & Cargo;150;320;85
+28;T28;Passenger & Mail;200;320;72
+36;T36;Passenger;75;220;15
+38;T38;Passenger & Mail;175;320;91
+50;T50;Express Passenger & Cargo;150;330;22
+59;T59;Passenger & Cargo;50;180;72
+60;T60;Passenger & Mail;50;150;105
+63;T63;Passenger & Cargo;50;250;75
+66;T66;Passenger;125;120;1
+73;T73;Passenger;150;320;21
+76;T76;Passenger;75;90;42
+87;T87;Passenger & Cargo;200;150;19
+91;T91;Passenger & Mail;125;250;3
+93;T93;Passenger;200;90;11
+122;T122;Express Passenger;125;330;26
+127;T127;Passenger & Mail;150;320;43
+134;T134;Passenger;100;80;28
+136;T136;Passenger & Cargo;125;250;4
+142;T142;Passenger, Mail & Cargo;175;220;31
+151;T151;Passenger, Mail & Cargo;200;320;48
+152;T152;Passenger, Mail & Cargo;125;320;13
+157;T157;Passenger & Cargo;200;90;14
+159;T159;Passenger with Dining;200;300;53
+164;T164;Passenger & Cargo;125;180;22
+174;T174;Passenger & Mail;175;90;23
+182;T182;Passenger & Cargo;200;250;25
+186;T186;Passenger & Cargo;175;220;38
+212;T212;Passenger;150;150;4
+215;T215;Passenger, Mail & Cargo;75;90;3
+216;T216;Passenger, Mail & Cargo;75;90;6
+236;T236;Passenger & Mail;75;180;84
+241;T241;Passenger with Dining;175;250;71
+242;T242;Passenger & Mail;150;150;1
+255;T255;Passenger;50;300;12
+256;T256;Passenger & Mail;75;80;53
+258;T258;Passenger with Dining;150;180;6
+262;T262;Passenger, Mail & Cargo;75;150;1
+271;T271;Passenger & Cargo;50;320;32
+275;T275;Passenger & Mail;75;80;27
+277;T277;Passenger & Mail;150;120;16
+304;T304;Passenger;175;300;77
+317;T317;Passenger & Mail;125;300;36
+324;T324;Passenger, Mail & Cargo;50;150;75
+329;T329;Express Passenger;150;330;11
+330;T330;Passenger & Mail;75;150;9
+335;T335;Passenger with Dining;175;90;13
+345;T345;Passenger & Mail;150;120;28
+349;T349;Passenger & Mail;150;300;7
